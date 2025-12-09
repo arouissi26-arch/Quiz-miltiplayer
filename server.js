@@ -164,8 +164,7 @@ function getLocalIP() {
 // ============================================
 
 // Serve static files
-app.use(express.static(path.join(__dirname)));
-app.use(express.static(path.join(__dirname, '..')));
+app.use('/quiz-multiplayer', express.static(path.join(__dirname)));
 
 io.on('connection', (socket) => {
     logger.info(`Client connected: ${socket.id}`);
